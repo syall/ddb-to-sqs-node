@@ -92,7 +92,7 @@ if (!isMainThread) (async () => {
     // Send Items to SQS
     const sendItemsToSQS = items => items.forEach(i => sqs.sendMessage(
         { QueueUrl, MessageBody: i.pKey.S },
-        (error, _) => error && console.error(`Error: ${error}`)
+        (error, _) => error && console.error(`Error: ${error}, ${i.pKey.S}`)
     ));
 
     // Scan Segment Loop
@@ -108,6 +108,7 @@ if (!isMainThread) (async () => {
         sendItemsToSQS(data.Items);
     } catch (error) {
         console.error(`Error: ${error}`);
+        console.error(`LastEvaluatedKey: ${ddbParams.ExclusiveStartKey}`);
     }
 
 })();
