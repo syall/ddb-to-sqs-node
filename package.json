@@ -8,5 +8,9 @@
   },
   "dependencies": {
     "aws-sdk": "^2.701.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syall/ddb-to-sqs-node.git"
   }
 }
