@@ -1,0 +1,6 @@
+{
+    "table": "AWS Table Name (String)",
+    "segments": "Number of Segments to divide Table into (Number)",
+    "queue": "AWS Queue Name (String)",
+    "dlArn": "Dead Letter Queue ARN (String)"
+}
