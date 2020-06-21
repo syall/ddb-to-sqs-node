@@ -1,5 +1,5 @@
 {
-  "name": "poc-node",
+  "name": "ddb-to-sqs-node",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
