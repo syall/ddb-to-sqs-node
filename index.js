@@ -25,11 +25,7 @@ AWS.config.getCredentials(error => {
 });
 
 // Parent Thread
-if (isMainThread) {
-
-    // Log Process
-    console.log('Sourcing Started');
-    process.on('exit', () => console.log('Sourcing Finished'));
+if (isMainThread) try {
 
     // Arguments
     const argv = JSON.parse(require('fs').readFileSync(process.argv.pop()));
@@ -39,6 +35,10 @@ if (isMainThread) {
     queue:     'AWS Queue Name'
     dlArn:     'Dead Letter Queue ARN'
     */
+
+    // Log Process
+    console.log('Sourcing Started');
+    process.on('exit', () => console.log('Sourcing Finished'));
 
     // Start Worker Segment Threads
     const workers = [];
@@ -50,6 +50,9 @@ if (isMainThread) {
             }
         }));
 
+} catch (error) {
+    console.error(`Error: ${error}`);
+    process.exit(1);
 }
 
 // Worker Segment Threads
