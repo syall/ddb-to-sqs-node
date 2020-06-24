@@ -1,9 +1,9 @@
 /** DynamoDB to SQS AWS Application
- * Arguments
- * table:     'AWS Table Name'
- * segments:  'Number of Segments to divide Table into'
- * queue:     'AWS Queue Name'
- * dlArn:     'Dead Letter Queue ARN'
+ * Parameters
+ * table:     'AWS Table Name (String)'
+ * segments:  'Number of Segments to divide the Table into (Number)'
+ * queue:     'AWS Queue Name (String)'
+ * dlArn:     'Dead Letter Queue ARN (String)'
  */
 // Worker Threads
 const { Worker, isMainThread, workerData } = require('worker_threads');
