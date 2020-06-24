@@ -20,7 +20,7 @@ AWS.config.getCredentials(error => {
     else {
         const id = isMainThread ? 'Main' : workerData.segment;
         console.log(`Validate Thread: ${id}`);
-        // Log Region, Access Key, and Secret Key
+        /* Log Region, Access Key, and Secret Key */
         // console.log("Region: ", AWS.config.region);
         // console.log("Access key:", AWS.config.credentials.accessKeyId);
         // console.log("Secret key:", AWS.config.credentials.secretAccessKey);
@@ -68,7 +68,7 @@ else (async _ => {
             })
         }
     }).promise();
-    // Scan Segment Loop
+    // Scanning/Messaging Loop
     do {
         try {
             // Scan Items
