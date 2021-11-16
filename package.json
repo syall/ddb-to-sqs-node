@@ -7,7 +7,7 @@
     "start": "node index.js input.json"
   },
   "dependencies": {
-    "aws-sdk": "^2.701.0"
+    "aws-sdk": "^2.814.0"
   },
   "repository": {
     "type": "git",
